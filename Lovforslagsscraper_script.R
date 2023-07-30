@@ -99,5 +99,8 @@ motions_df$summary <- str_match(motions_df$motion_content, "Resumé: (.*) Afstem
 motions_df$motion_content <- NULL
 motions_df$motion_header <- NULL
 
-
 full_df <- rbind(motions_df, laws_df)
+
+full_df$first_proc <- dmy(full_df$first_proc)
+full_df$second_proc <- dmy(full_df$second_proc)
+full_df$third_proc <- dmy(full_df$third_proc)
